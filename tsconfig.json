@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "outDir": "lib",
+      "moduleResolution": "node",
+      "target": "ES2017",
+      "strict": true,
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "allowJs": true,
+      "esModuleInterop": true,
+      "types": ["react", "@emotion/react/types/css-prop"],
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "declaration": true,
+      "jsx": "react",
+      "baseUrl": "."
+    },
+    "exclude": ["node_modules"],
+    "include": ["types/*.d.ts", "**/*.ts", "**/*.tsx"],
+}
