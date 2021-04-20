@@ -1,20 +1,23 @@
 import React from 'react';
-import { Story } from '@storybook/react';
 
+import { Story } from '@storybook/react';
 import { css } from "@emotion/react";
 
 import {Button, ButtonProps} from '.';
+import {ButtonGroup} from '../ButtonGroup/ButtonGroup';
+
+import Icon from '../Icon/Icon';
 
 export default {
   title: 'Components/Button',
   component: Button
 };
 
-export const button = () => <Button>BUTTON</Button>;
+// export const button = () => <Button>BUTTON</Button>;
   
-button.story = {
-  name: 'Default'
-};
+// button.story = {
+//   name: 'Default'
+// };
 
 const Template: Story<ButtonProps> = (args) => 
   <Button {...args}>Button</Button>
@@ -48,22 +51,6 @@ const TemplateSize: Story<ButtonProps> = (args) =>
 export const sizeButton = TemplateSize.bind({});
 sizeButton.args = { size: "small"}
 
-// export const sizes = () =>
-//   <div css={buttonWrapper}>
-//     <div>
-//       <div className="description">Small</div>
-//       { sizeButton }
-//     </div>
-//     <div>
-//       <div className="description">Medium</div>
-//       { mediumButton }
-//     </div>
-//     <div>
-//       <div className="description">Big</div>
-//       { bigButton }
-//     </div>
-//   </div>;
-
 export const disabled = () => 
     <div css={buttonWrapper}>
       <div>
@@ -91,3 +78,33 @@ export const customSized = () =>
       </div>
     </div>
 
+
+export const withIcon = () => 
+    <div>
+      <ButtonGroup>
+        <Button size="small">
+          <Icon icon="heart" /> LIKE
+        </Button>
+        <Button>
+          <Icon icon="heart" /> LIKE
+        </Button>
+        <Button size="big">
+          <Icon icon="heart" /> LIKE
+        </Button>
+      </ButtonGroup>
+    </div>
+
+export const iconOnly = () => 
+    <div>
+      <ButtonGroup>
+        <Button iconOnly size="small">
+          <Icon icon="heart" />
+        </Button>
+        <Button iconOnly>
+          <Icon icon="heart" />
+        </Button>
+        <Button iconOnly size="big">
+          <Icon icon="heart" />
+        </Button>
+      </ButtonGroup>
+    </div>

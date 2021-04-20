@@ -5,14 +5,8 @@ import {ButtonGroup, ButtonGroupProps} from './ButtonGroup';
 import {Button} from '../Button';
 
 export default {
-  title: 'Components|ButtonGroup',
+  title: 'Components/ButtonGroup',
   component: ButtonGroup,
-};
-
-export const buttonGroup = () => <ButtonGroup>Group</ButtonGroup>;
-  
-buttonGroup.story = {
-  name: 'Default'
 };
 
 const Template: Story<ButtonGroupProps> = (args) => 
@@ -23,17 +17,17 @@ const Template: Story<ButtonGroupProps> = (args) =>
 
 export const buttonGroup = Template.bind({});
 buttonGroup.args = {
-    direction: 'row',
-    rightAlign: false,
+  direction: 'row',
+  rightAlign: false,
     gap: '0.5rem'
 };
 
 
 export const rightAlign = Template.bind({});
 rightAlign.args = {
-    direction: 'row',
-    rightAlign: true,
-    gap: '0.5rem'
+  direction: 'row',
+  rightAlign: true,
+  gap: '0.5rem'
 }
 
 export const column = () => {
