@@ -9,7 +9,7 @@ import { action } from '@storybook/addon-actions';
 import {Button, ButtonProps} from './Button';
 import {ButtonGroup} from '../ButtonGroup/ButtonGroup';
 
-import Icon from '../Icon/Icon';
+import Icon from '../../.storybook/Icon/Icon';
 
 export default {
   title: 'Components/Button',

@@ -1,3 +1,5 @@
 node_modules
+storybook-static
+dist
 yarn.lock
-package-lock.sjon
+package-lock.json

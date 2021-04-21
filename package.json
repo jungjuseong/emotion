@@ -1,12 +1,15 @@
 {
-  "name": "emotion",
+  "name": "visang-uikit-sample",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build": "rollup -c",
+    "build-storybook": "build-storybook",
+    "build:types": "tsc --emitDeclarationOnly"
   },
   "keywords": [],
   "author": "LJY_ <boryc24@gmail.com>",
@@ -24,11 +27,19 @@
     "@storybook/addon-knobs": "^6.2.8",
     "@storybook/addon-links": "^6.2.8",
     "@storybook/react": "^6.2.8",
+    "@svgr/rollup": "^5.5.0",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-named-asset-import": "^0.3.7",
+    "babel-preset-react-app": "^10.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rollup": "^2.45.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-url": "^3.0.1",
     "tsconfig-paths-webpack-plugin": "^3.5.1"
   },
   "dependencies": {
@@ -37,7 +48,11 @@
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
-    "react-spring": "^9.1.1"
-  },
-  "repository": "https://github.com/jungjuseong/emotion.git"
+    "react-spring": "^9.1.1",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }
