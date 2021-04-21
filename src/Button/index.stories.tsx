@@ -6,7 +6,7 @@ import { css } from "@emotion/react";
 import {Button, ButtonProps} from '.';
 import {ButtonGroup} from '../ButtonGroup/ButtonGroup';
 
-import Icon from '../Icon/Icon';
+//import Icon from '../../.storybook/Icon/Icon';
 
 export default {
   title: 'Components/Button',
@@ -79,32 +79,32 @@ export const customSized = () =>
     </div>
 
 
-export const withIcon = () => 
-    <div>
-      <ButtonGroup>
-        <Button size="small">
-          <Icon icon="heart" /> LIKE
-        </Button>
-        <Button>
-          <Icon icon="heart" /> LIKE
-        </Button>
-        <Button size="big">
-          <Icon icon="heart" /> LIKE
-        </Button>
-      </ButtonGroup>
-    </div>
+// export const withIcon = () => 
+//     <div>
+//       <ButtonGroup>
+//         <Button size="small">
+//           <Icon icon="heart" /> LIKE
+//         </Button>
+//         <Button>
+//           <Icon icon="heart" /> LIKE
+//         </Button>
+//         <Button size="big">
+//           <Icon icon="heart" /> LIKE
+//         </Button>
+//       </ButtonGroup>
+//     </div>
 
-export const iconOnly = () => 
-    <div>
-      <ButtonGroup>
-        <Button iconOnly size="small">
-          <Icon icon="heart" />
-        </Button>
-        <Button iconOnly>
-          <Icon icon="heart" />
-        </Button>
-        <Button iconOnly size="big">
-          <Icon icon="heart" />
-        </Button>
-      </ButtonGroup>
-    </div>
+// export const iconOnly = () => 
+//     <div>
+//       <ButtonGroup>
+//         <Button iconOnly size="small">
+//           <Icon icon="heart" />
+//         </Button>
+//         <Button iconOnly>
+//           <Icon icon="heart" />
+//         </Button>
+//         <Button iconOnly size="big">
+//           <Icon icon="heart" />
+//         </Button>
+//       </ButtonGroup>
+//     </div>
