@@ -1,6 +1,6 @@
 import React from "react";
-
-import Icon from './Icon';
+import {css} from "@emotion/react"
+import Icon, { iconTypes } from './Icon';
 
 export default {
   component: Icon,
@@ -18,3 +18,32 @@ export const customColor = () => <Icon icon="heart" color="red" />;
 
 export const customizedWithStyle = () => 
   <Icon icon="heart" css={{ color: 'red', width: '4rem' }} />
+
+export const ilstOfIcons = () =>{
+  return (
+    <ul css={iconListStyle}>
+      {iconTypes.map(icon=>(
+        <li key={icon}>
+          <Icon icon={icon} />
+          {icon}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+const iconListStyle = css`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    box-sizing: border-box;
+    width: 25%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 1rem;
+    }
+  }
+`;

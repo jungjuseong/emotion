@@ -4,8 +4,8 @@ import { css } from '@emotion/react';
 export type ButtonGroupProps = {
   /** 버튼을 보여줄 방향 */
   direction: 'row' | 'column';
-  /** 버튼을 우측에 보여줍니다. */
-  rightAlign?: boolean;
+  /** 버튼을 정령할 방향. */
+  align: 'right'|'left'|'middle';
   /** 버튼과 버튼사이의 간격을 설정합니다. */
   gap: number | string;
   /** 버튼 그룹에서 보여줄 버튼들 */
@@ -20,23 +20,27 @@ export type ButtonGroupProps = {
  */
  export const ButtonGroup = ({
     direction,
-    rightAlign,
+    align,
     children,
     gap,
     className
   }: ButtonGroupProps) => 
-    <div css = {[
+    <div 
+      css = {[
         { display: 'flex', flexDirection: direction},
         gapStyle(direction, gap),
-        rightAlign && rightAlignStyle
-    ]}>
+        alignStyle[align]
+      ]}
+      className={className}
+    >
         {children}
     </div>
 
 
 ButtonGroup.defaultProps = {
     direction: 'row',
-    gap: '0.5rem'
+    gap: '0.5rem',
+    align: 'left'
 };
   
 // direction 에 따라 margin-left 또는 margin-top 설정
@@ -45,6 +49,15 @@ const gapStyle = (direction: 'row' | 'column', gap: number | string) =>
       'button + button': {[direction === 'row' ? 'marginLeft' : 'marginTop']: gap }
     });
 
-const rightAlignStyle = css`
+const alignStyle = {
+  left: css`
+  justify-content: flex-start;
+  `,
+  right: css`
     justify-content: flex-end;
-`;
+  `,
+  middle: css`
+    justify-content: center;
+  `,
+
+};

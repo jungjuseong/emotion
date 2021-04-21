@@ -2,7 +2,7 @@ import React from 'react';
 import { Story } from '@storybook/react';
 
 import {ButtonGroup, ButtonGroupProps} from './ButtonGroup';
-import {Button} from '../Button';
+import {Button} from '../Button/Button';
 
 export default {
   title: 'Components/ButtonGroup',
@@ -18,7 +18,6 @@ const Template: Story<ButtonGroupProps> = (args) =>
 export const buttonGroup = Template.bind({});
 buttonGroup.args = {
   direction: 'row',
-  rightAlign: false,
     gap: '0.5rem'
 };
 
@@ -26,7 +25,7 @@ buttonGroup.args = {
 export const rightAlign = Template.bind({});
 rightAlign.args = {
   direction: 'row',
-  rightAlign: true,
+  align: 'right',
   gap: '0.5rem'
 }
 

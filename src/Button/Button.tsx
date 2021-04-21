@@ -8,7 +8,7 @@ export type ButtonProps = {
     /** 클릭했을 때 호출할 함수 */
     onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
     /** 버튼의 생김새를 설정합니다. */
-    theme: 'primary' | 'secondary' | 'tertiary';
+    theme: 'primary' | 'secondary' | 'tertiary' | 'player' | 'view';
       /** 버튼의 크기를 설정합니다 */
     size: 'small' | 'medium' | 'big';
       /** 버튼을 비활성화 시킵니다. */
@@ -16,15 +16,22 @@ export type ButtonProps = {
     /** 버튼의 너비를 임의로 설정합니다. */
     width?: string | number;
     iconOnly?: boolean;
+    /** 버튼 모양을 둥글게 */
+    isRound?: boolean;
   };
 
 /** `Button` 컴포넌트는 어떠한 작업을 트리거 할 때 사용합니다.  */
-export const Button = ({ children, theme, size, disabled, width, iconOnly, onClick }: ButtonProps) => {
+export const Button = ({ children, theme, size, disabled, width, iconOnly,isRound, onClick }: ButtonProps) => {
     return (
       <button
-        css={[style, themes[theme], sizes[size], {width}, 
+        css={[
+          style, 
+          themes[theme], 
+          sizes[size], 
+          {width},
+          isRound && [Round], 
           iconOnly && [iconOnlyStyle, iconOnlySizes[size]]]}
-        disabled={disabled}
+        disabled= {disabled}
         onClick={onClick}
       >
         {children}
@@ -34,7 +41,7 @@ export const Button = ({ children, theme, size, disabled, width, iconOnly, onCli
 
 Button.defaultProps = {
     theme: 'primary',
-    size: 'medium'
+    size: 'medium',
 };
   
 const style = css`
@@ -117,6 +124,30 @@ const themes = {
         fill: #bcd9d0;
       }
     }
+  `,
+  player: css`
+    background: indigo;
+    color: white;
+    width: 50px;
+    height: 50px;
+  `,
+  view: css`
+    background: #0b0b50;
+    color: white;
+    //font-size: 0.5rem;
+    &:hover {
+      background: #38386d
+    }
+    &:active {
+      background: #22224d;
+    }
+    &:disabled {
+      background: #4e4e8a;
+      color: #e6e4e4;
+      svg {
+        fill: #e6e4e4;
+      }
+    }
   `
 };
 
@@ -138,9 +169,13 @@ const sizes = {
   `
 };
 
+const Round = css`
+  border-radius: 20px;
+`;
+
 const iconOnlyStyle = css`
   padding: 0;
-  border-radius: 50%;
+  //border-radius: 50%;
   svg {
     margin: 0;
   }

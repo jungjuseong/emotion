@@ -2,7 +2,7 @@ import React, { Fragment} from 'react';
 import { css, jsx } from '@emotion/react';
 
 import {ButtonGroup} from '../ButtonGroup/ButtonGroup';
-import {Button} from '../Button';
+import {Button} from '../Button/Button';
 
 export type DialogProps = {
     visible: boolean;
@@ -41,7 +41,7 @@ export const Dialog = ({
                 {description && <p>{description}</p>}
                 {children}
                 {!hideButtons && (
-                <ButtonGroup css={{ marginTop: '3rem' }} rightAlign>
+                <ButtonGroup css={{ marginTop: '3rem' }} align='right'>
                     {cancellable && (
                     <Button theme="tertiary" onClick={onCancel}>
                         {cancelText}
