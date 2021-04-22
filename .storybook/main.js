@@ -5,8 +5,15 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const resolvePath = (_path) => path.join(process.cwd(), _path);
 
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+  stories: [
+    "../src/**/*.stories.mdx", 
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  addons: [
+    "@storybook/addon-links", 
+    "@storybook/addon-essentials",
+    "@storybook/preset-scss",
+  ],
   typescript: {
     check: false,
     checkOptions: {},
@@ -37,7 +44,9 @@ module.exports = {
       test: /\.(ts|tsx)$/,
       loader: require.resolve("babel-loader"),
       options: {
-        presets: [require.resolve("@emotion/babel-preset-css-prop")],
+        presets: [
+          require.resolve("@emotion/babel-preset-css-prop"),
+        ],
         plugins: [
           [
             require.resolve('babel-plugin-named-asset-import'),
@@ -52,6 +61,20 @@ module.exports = {
         ],
       },
     });
+
+    // Sass
+    config.module.rules.push(
+      {
+        test: /\.(s*)css$/,
+        use: [
+          "style-loader", // creates style nodes from JS strings
+          "css-loader?modules", // translates CSS into CommonJS
+          "sass-loader" // compiles Sass to CSS, using Node Sass by default
+        ],
+        include: path.resolve(__dirname, "../styles/global.scss"),
+        exclude: /node_modules/
+      }
+    );
     return config;
   },
 };
