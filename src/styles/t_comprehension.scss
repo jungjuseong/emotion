@@ -15,7 +15,7 @@
             top: 48px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1;
+            z-index: 1;            
             .btn_comprehension {
                 @include btn_down_dis ( 
                     url('./assets/teacher/images/btn_comprehension.png'),
@@ -28,10 +28,6 @@
                 }
             }
             .btn_visualizing {
-                min-width: 100px;
-                min-height: 50px;
-                width: 400;
-                height: 100;
                 @include btn_down_dis ( 
                     url('./assets/teacher/images/btn_visualizing.png'), 
                     url('./assets/teacher/images/btn_visualizing_down.png'), 
@@ -39,13 +35,14 @@
                     width('./assets/teacher/images/btn_visualizing.png'), 
                     height('./assets/teacher/images/btn_visualizing.png'));
                 &.on {
-                    
+                    min-width: 200px;
+                    min-height: 40px;
                     @include btn_down_dis ( 
-                        './assets/teacher/images/btn_visualizing.png', 
-                        './assets/teacher/images/btn_visualizing_down.png', 
-                        './assets/teacher/images/btn_visualizing.png', 
-                        width('./assets/teacher/images/btn_visualizing.png'), 
-                        height('./assets/teacher/images/btn_visualizing.png'));
+                        url('./assets/teacher/images/btn_visualizing.png'), 
+                        url('./assets/teacher/images/btn_visualizing_down.png'), 
+                        url('./assets/teacher/images/btn_visualizing.png'), 
+                        400, //width('./assets/teacher/images/.png'), 
+                        100); // height('./assets/teacher/images/btn_visualizing.png'));
                 }
             }
             .btn_summarizing {

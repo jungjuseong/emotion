@@ -15,14 +15,16 @@ export default {
 
 const Template: Story<ToggleBtnProps> = (args) => 
   <div className="t_comprehension">
-    <div className="top">
-		  <ToggleBtn class_name="btn_visualizing" on={true} disabled={false}/>
+    <div className="top" style={{backgroundColor: 'khaki'}}>
+		  <ToggleBtn {...args}/>
     </div>
   </div>
 
-export const primaryButton = Template.bind({});
-primaryButton.args = {
-  className: "btn_play_pause"
+export const visualizingButton = Template.bind({});
+visualizingButton.args = {
+  class_name: "btn_visualizing",
+  on: true,
+  disabled: false,
 };
 
 // export const secondaryButton = Template.bind({});

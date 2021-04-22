@@ -37,8 +37,8 @@
 	outline: none;
 	background-image: $src;
 	background-repeat: no-repeat;
-	width: $width;
-	height: $height;
+	// width: $width;
+	// height: $height;
 	pointer-events: unset;
 	cursor: pointer;
 	&:disabled{
@@ -64,7 +64,7 @@
 	touch-action: none;
 	padding: 0px;
 	border: none;
-	background-color: transparent;
+	//background-color: transparent;
 	outline: none;
 	background-image: $src;
 	background-repeat: no-repeat;
