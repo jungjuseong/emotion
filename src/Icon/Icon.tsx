@@ -3,6 +3,7 @@ import React from "react";
 import { jsx } from '@emotion/react';
 import * as icons from './svg';
 
+
 type IconType = keyof typeof icons;
 export const iconTypes: IconType[] = Object.keys(icons) as any[]; // 스토리에서 불러오기 위함
 

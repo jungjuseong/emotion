@@ -42,6 +42,9 @@ export const Button = ({ children, theme, size, disabled, width, iconOnly,isRoun
 Button.defaultProps = {
     theme: 'primary',
     size: 'medium',
+    disabled: false,
+    inconOnly: false,
+    isRound: false
 };
   
 const style = css`
