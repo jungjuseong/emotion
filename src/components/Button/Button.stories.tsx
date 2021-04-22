@@ -14,7 +14,7 @@ import Icon from '../Icon/Icon';
 export default {
   title: 'Components/Button',
   component: Button,
-  decorators: [withKnobs]
+  //decorators: [withKnobs]
 };
 
 // export const button = () => <Button>BUTTON</Button>;
