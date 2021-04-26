@@ -11,7 +11,7 @@ html, body{
 	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);    /* 버튼 포커스시 색상 변하는 현상 방지 */
 	@include font;
 	font-size:8px;
-	overflow:hidden;
+	//overflow:hidden;	/*스토리북도 스크롤 같이 없어짐*/
 }
 button{
 	@include font;
@@ -95,4 +95,5 @@ div, p{
 }
 
 
-@include t_comprehension
+@include t_comprehension;
+@include mixin_page_box;

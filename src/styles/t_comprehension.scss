@@ -343,6 +343,7 @@
     height: 0px;
     position: absolute;
     top: 150px;
+    top: 114px;
 }
 
 @mixin mixin_page_box {
@@ -360,6 +361,16 @@
             color: rgba(179, 179, 179, 0.5);
             &.on {
                 color: rgb(248, 246, 77);
+            }
+        }
+        &>span {
+            margin: 0 22px;
+            font-size: 25px;
+            font-weight: normal;
+            color: rgba(255, 255, 255, 0.5);
+            text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+            &.on {
+                text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.39);
             }
         }
         &.off {
