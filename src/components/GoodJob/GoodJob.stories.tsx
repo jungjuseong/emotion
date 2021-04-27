@@ -3,7 +3,7 @@ import React from 'react';
 import { Story } from '@storybook/react';
 import { css } from "@emotion/react";
 
-import {GoodJob, GoodJobProps} from './GoodJob';
+import {GoodJob, GoodJobProps} from './goodjob';
 
 import Icon from '../Icon/Icon';
 
@@ -18,7 +18,6 @@ const Template: Story<GoodJobProps> = (args) =>
 export const goodJob = Template.bind({});
 goodJob.args = {
   view: true,
-  delay: 800,
   onComplete: () => console.log('onComplete'),
 
 };

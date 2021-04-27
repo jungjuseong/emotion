@@ -222,7 +222,7 @@ export const WrapTextNew = observer((props:IWrapText) => {
 		window.requestAnimationFrame(_aniFrame);
 	}
 
-	//수정필요
+	//확인필요
 	React.useEffect(() => {
 		if(props.view) {
 			OWrapText.setFontSize(props.maxSize ? props.maxSize : 0)

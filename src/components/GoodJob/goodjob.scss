@@ -3,8 +3,10 @@
 	left: 50%;
 	top: 50%;
 	background-image: url("./goodjob.png");
-	width: width("./goodjob.png");
-	height: height("./goodjob.png");
+	width:500px;
+	height:500px;
+	//width: width("./goodjob.png");
+	//height: height("./goodjob.png");
 	
 	transform: translate(-50%, -50%) scale(0.8, 0.8);
 	//visibility: hidden;

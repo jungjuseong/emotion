@@ -1,6 +1,6 @@
 import React from 'react';
 import { observable } from 'mobx';
-import * as _ from 'lodash';
+import * as _ from "lodash";
 
 import './goodjob.scss';
 
@@ -10,6 +10,7 @@ export type GoodJobProps = {
 	delay: number;
 	onComplete: () => void;
 }
+
 
 export function GoodJob({view, delay, onComplete}: GoodJobProps) {
 
@@ -31,6 +32,7 @@ export function GoodJob({view, delay, onComplete}: GoodJobProps) {
 	}, delay);		
 	
 	React.useEffect(() => {
+		console.log("useEffect")
 		if (view) {
 			setOff(false);
 			f_2();
@@ -49,7 +51,7 @@ export function GoodJob({view, delay, onComplete}: GoodJobProps) {
 
 	console.log(class_name);
 	return (
-		<div className="common_goodjob on"/>
+		<div className={class_name} />
 	);
 	
 }
