@@ -2,7 +2,7 @@ import * as React from 'react';
 import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 
-export interface ToggleBtnProps {
+export type ToggleBtnProps = {
 	id?: string;
 	useMap?: string;
 	class_name?: string;
@@ -83,11 +83,6 @@ export function ToggleBtn(props:ToggleBtnProps) {
 			evt.stopPropagation();
 		}
 	}
-
-	// public componentWillReceiveProps(nextProps: T&IBtn) {
-	// 	if(this.props.on !== nextProps.on) this.m_on = nextProps.on === true;
-	// }
-
 
 	const arr: string[] = [];
 	if(props.class_name) arr.push(props.class_name as string);
