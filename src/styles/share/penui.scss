@@ -6,8 +6,8 @@
 	left: 50%;
 	width: width("./assets/images/penui/pen_box.png");
 	transform: translateX(-50%);
-	bottom: -1 * 200; //height("./assets/images/penui/pen_box.png");
-	height: 200; //height("./assets/images/penui/pen_box.png");
+	bottom: -102; // -1 * height("./assets/images/penui/pen_box.png");
+	height: height("./assets/images/penui/pen_box.png");
 	z-index: 10;
 	
 	transition: bottom 0.3s;
@@ -133,33 +133,5 @@
 			);
 		}
 
-
 	}
-	/*
-	&>div{
-		border:0px solid #f00;
-		margin-top: 30px;
-		text-align: center;
-		.btn_reset{
-			vertical-align: top;
-			@include btn_down_dis(
-				url("./assets/images/penui/btn_reset.png"),
-				url("./assets/images/penui/btn_reset_on.png"),
-				'',
-				width("./assets/images/penui/btn_reset.png"),
-				height("./assets/images/penui/btn_reset.png")
-			);
-		}
-		.btn_undo{
-			vertical-align: top;
-			@include btn_down_dis(
-				url("./assets/images/penui/btn_undo.png"),
-				url("./assets/images/penui/btn_undo_on.png"),
-				'',
-				width("./assets/images/penui/btn_undo.png"),
-				height("./assets/images/penui/btn_undo.png")
-			);
-		}
-	}
-	*/
 }
