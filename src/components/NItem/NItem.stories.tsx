@@ -2,10 +2,11 @@ import React from 'react';
 
 import { Story } from '@storybook/react';
 import { css } from "@emotion/react";
-import { action, makeObservable, observable } from 'mobx'; 
+import { action, makeObservable, observable, observe } from 'mobx'; 
 
 import { NItem, INItem } from './NItem';
 import { number } from '@storybook/addon-knobs';
+import { observer } from 'mobx-react';
 
 
 export default{
@@ -25,18 +26,18 @@ btnPageBox.args = {
     on: true, 
 };
 
+const onObjetc = observable({
+    onNum: 0,
+    _onClick(idx: number){
+        this.onNum=idx;
+        console.log(this.onNum)
+      }
+})
 
-export const btnPageBoxGroup = () =>{
-    let onNum = 0;
 
-    const _onClick = (idx: number) => {
-        onNum=idx;
-    }
-    return(
+export const btnPageBoxGroup = () => 
         <div className="btn_page_box">
-            <NItem idx={0} on={onNum===0} onClick={_onClick}/>
-            <NItem idx={1} on={onNum===1} onClick={_onClick} />
-            <NItem idx={2} on={onNum===2} onClick={_onClick} />
+            <NItem idx={0} on={onObjetc.onNum===0} onClick={onObjetc._onClick}/>
+            <NItem idx={1} on={onObjetc.onNum===1} onClick={onObjetc._onClick} />
+            <NItem idx={2} on={onObjetc.onNum===2} onClick={onObjetc._onClick} />
         </div>
-    )   
-}
