@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 import {Dialog, DialogProps} from './Dialog';
 
 export default {
-    title: 'components/Dialog',
+    title: 'Tutorial/Dialog',
     component: Dialog,
     parameters: {
         docs: {

@@ -6,14 +6,14 @@ import * as _ from 'lodash';
 import girl from '../../styles/assets/images/yourturn/girl.png';
 import ut from '../../styles/assets/images/yourturn/ut.png';
 
-export interface IYourturn {
+export type YourturnProps = {
 	className: string;
 	view: boolean;
 	start: boolean;
 }
 
 
-export const Yourturn = observer((props:IYourturn) => {
+export const Yourturn = observer((props:YourturnProps) => {
 	let _svg: MYSVGElement|null = null;
 	let _className: string;
 

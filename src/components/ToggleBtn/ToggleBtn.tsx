@@ -20,7 +20,7 @@ export type ToggleBtnProps = {
 	disableCapture?: boolean;	
 }
 
-export function ToggleBtn(props:ToggleBtnProps) {
+export const ToggleBtn = (props:ToggleBtnProps) => {
 	let m_el:HTMLElement;
 
 	const [m_pID, setPid] = React.useState(-1);

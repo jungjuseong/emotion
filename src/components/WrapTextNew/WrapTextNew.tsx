@@ -2,13 +2,14 @@ import * as React from 'react';
 //import * as ReactDOM from 'react-dom';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
+import {css} from '@emotion/react'
 
 //import * as _ from 'lodash';
 import ReactResizeDetector from 'react-resize-detector';
 import { View } from 'src/components/View/View';
 
-export interface IWrapText {
-	children?: String;
+export type WrapTextProps = {
+	children?: JSX.Element;
 	className?: string;
 	view: boolean;
 	maxSize?: number;
@@ -22,20 +23,10 @@ export interface IWrapText {
 	onClick?: (evt?: React.MouseEvent<HTMLElement>) => void;
 }
 
+export const WrapTextNew = (props:WrapTextProps) => {
 
-
-
-export const WrapTextNew = observer((props:IWrapText) => {
-	const OWrapText = observable({
-		_width: 0,
-		_fontSize: 0,
-		setWidth(num:number){
-			this._width=num;
-		},
-		setFontSize(num:number){
-			this._fontSize=num;
-		}
-	})
+	const [_width, setWidth] = React.useState(0);
+	const [_fontSize, setFontSize] = React.useState(0);
 
 	let _div: HTMLDivElement|null = null;
 	let _bndW = 0;
@@ -43,7 +34,7 @@ export const WrapTextNew = observer((props:IWrapText) => {
 	let _myW = 0;
 	let _numOfLine = 0;
 
-	OWrapText.setFontSize(props.maxSize ? props.maxSize : 0)
+	()=>setFontSize(props.maxSize ? props.maxSize : 0)
 
 	const _ref = (div: HTMLDivElement) => {
 		if(_div || !div) return;
@@ -55,7 +46,7 @@ export const WrapTextNew = observer((props:IWrapText) => {
 		if(!props.view) return false;
 		else if(_myW <= 0) return false;
 		else if(!_div) return false;
-		else if(OWrapText._width > 0) return false;
+		else if(_width > 0) return false;
 		else return true;	
 	}
 
@@ -70,7 +61,7 @@ export const WrapTextNew = observer((props:IWrapText) => {
 		if(!_canCalc()) return;
 		else if(!_div) return;
 
-		const brect = _div.getBoundingClientRect();
+		const  brect = _div.getBoundingClientRect();
 
 		const gap = (_myW - brect.width);
 
@@ -208,11 +199,11 @@ export const WrapTextNew = observer((props:IWrapText) => {
 		// console.log(' canc, numLine', this._fontSize, numLine);
 		if(numLine > maxLineNum) {
 			const minSize = props.minSize ? props.minSize : 0;
-			if(OWrapText._fontSize > 0 && minSize > 0 && OWrapText._fontSize > minSize) {
-				OWrapText._fontSize--;
-			} else OWrapText.setWidth(Math.ceil(right - left + 2));
+			if(_fontSize > 0 && minSize > 0 && _fontSize > minSize) {
+				setFontSize(_fontSize-1)
+			} else setWidth(Math.ceil(right - left + 2));
 		} else if(cntIdx > 0) {
-			OWrapText.setWidth(Math.ceil(right - left + 2));
+			setWidth(Math.ceil(right - left + 2));
 		}
 
 	}
@@ -225,45 +216,52 @@ export const WrapTextNew = observer((props:IWrapText) => {
 	//확인필요
 	React.useEffect(() => {
 		if(props.view) {
-			OWrapText.setFontSize(props.maxSize ? props.maxSize : 0)
-			OWrapText.setWidth(0)
+			setFontSize(props.maxSize ? props.maxSize : 0)
+			setWidth(0)
 			window.requestAnimationFrame(_aniFrame);
 		} else if(!props.view) {
-			OWrapText.setWidth(0)
+			setWidth(0)
 		}
-		console.log("chView"+props.view)
+		console.log("chView"+props.view+" width = "+_width)
 	},[props.view]);
 
 	React.useEffect(()=>{
 		if(props.view && props.rcalcNum) {
-			OWrapText.setFontSize(props.maxSize ? props.maxSize : 0)
-			OWrapText.setWidth(0)
+			setFontSize(props.maxSize ? props.maxSize : 0)
+			setWidth(0)
 			window.requestAnimationFrame(_aniFrame);
 		}
 		console.log("chRcalcNum"+props.rcalcNum)
 	},[props.rcalcNum])
 
 	React.useEffect(()=>{
-		if(OWrapText._fontSize === 0 && props.maxSize) {
-			OWrapText.setFontSize(props.maxSize)
+		if(_fontSize === 0 && props.maxSize) {
+			setFontSize(props.maxSize)
 		}
-		console.log("chfontSize"+OWrapText._fontSize)
-	},[OWrapText._fontSize])
+		console.log("chfontSize"+_fontSize)
+	},[props.maxSize])
 
-
-		const {className} = props; 
-		const style: React.CSSProperties = {
+		const style = css`
+			white-space: normal;
+			display: inline-block;
+			width:${_width > 0 ? _width+'px' : '100%'};
+			text-align:${props.textAlign ? props.textAlign : _numOfLine <= 1 ? 'center':'left' };
+			font-size:${_fontSize > 0 ? _fontSize + 'px' : ''};
+			line-height: ${props.lineHeight ? props.lineHeight + '%' : ''};
+		`
+		
+		/*const style: React.CSSProperties = {
 			whiteSpace: 'normal',
 		};
 		// console.log('render', this._fontSize);
-		if(OWrapText._fontSize > 0) style.fontSize = OWrapText._fontSize + 'px';
+		if(_fontSize > 0) style.fontSize = _fontSize + 'px';
 		if(props.lineHeight) style.lineHeight = props.lineHeight + '%';
 
 		// console.log(' render', this._fontSize);
 
 		let textAlign: 'left'|'center'|'right';
-		if(OWrapText._width > 0) {
-			style.width = OWrapText._width + 'px';
+		if(_width > 0) {
+			style.width = _width + 'px';
 			style.display = 'inline-block';
 
 			
@@ -282,18 +280,18 @@ export const WrapTextNew = observer((props:IWrapText) => {
 			else textAlign = 'left';
 
 			style.textAlign = textAlign;
-		}
+		}*/
 
 		return (
-			<>
-				<div ref={_ref} className={className} style={style} onClick={props.onClick}>
+				<div 
+					css={[
+						style,
+					]}
+					ref={_ref} className={props.className} onClick={props.onClick}>
 					{props.children}
-					<ReactResizeDetector handleWidth={true} handleHeight={true} onResize={_resized}/>
+					<ReactResizeDetector handleWidth={true} handleHeight={true} onResize = {()=>_resized}/>
 				</div>
-			</>
 		);
 
 
-})
-
-export default WrapTextNew;
+}

@@ -3,7 +3,7 @@ import React from 'react';
 import { Story } from '@storybook/react';
 import { css } from "@emotion/react";
 
-import {Yourturn,IYourturn} from './yourturn';
+import {Yourturn,YourturnProps} from './yourturn';
 
 import Icon from '../Icon/Icon';
 
@@ -12,7 +12,7 @@ export default {
   component: Yourturn,
 };
 
-const Template: Story<IYourturn> = (args) => 
+const Template: Story<YourturnProps> = (args) => 
   <Yourturn {...args}/>
 
 export const yourTurn = Template.bind({});

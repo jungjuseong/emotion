@@ -1,6 +1,7 @@
 @import "./config_mixin.scss";
 @import "./share/font.scss";
 @import "./t_comprehension.scss";
+@import ".././components/Timer/Timer.scss";
 
 html, body{
 	padding:0px; margin:0px; 
@@ -97,3 +98,4 @@ div, p{
 
 @include t_comprehension;
 @include mixin_page_box;
+@include q_timer

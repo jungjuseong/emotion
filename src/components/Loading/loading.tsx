@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 
 import loadImg from '../../styles/assets/images/loading.svg'
 
-const Loading = ({ view }: {view: boolean}) => {
+export const Loading = ({ view }: {view: boolean}) => {
 	const style = css`
 		position: absolute;
 		left: 0px;
@@ -29,5 +29,3 @@ const Loading = ({ view }: {view: boolean}) => {
 		]} />
 	);
 };
-
-export { Loading };

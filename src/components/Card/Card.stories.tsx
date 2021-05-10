@@ -7,7 +7,7 @@ import {Card, CardProps} from './Card';
 import Icon from '../Icon/Icon';
 
 export default {
-  title: 'Components/Card',
+  title: 'Tutorial/Card',
   component: Card,
 };
 

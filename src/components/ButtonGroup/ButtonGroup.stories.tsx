@@ -5,7 +5,7 @@ import {ButtonGroup, ButtonGroupProps} from './ButtonGroup';
 import {Button} from '../Button/Button';
 
 export default {
-  title: 'Components/ButtonGroup',
+  title: 'Tutorial/ButtonGroup',
   component: ButtonGroup,
 };
 

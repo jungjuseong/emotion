@@ -9,105 +9,93 @@
 @import './t_storybook.scss';
 
 @mixin t_comprehension {
-    .t_comprehension {
+    .t_compre {
+        position: relative;
         &>.top {
             position: absolute;
-            top: 48px;
+            top: 30px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;            
+            .btn_passage {
+                @include btn_down_dis ( 
+                    url('../resorce/Passage_dis.png'), 
+                    url('../resorce/Passage_dis.png'), 
+                    url('../resorce/Passage_dis.png'), 
+                    207px, 45px);
+                &.on {
+                    background-image: url('../resorce/Passage_on.png');
+                }
+            }            
             .btn_comprehension {
                 @include btn_down_dis ( 
-                    url('./assets/teacher/images/btn_comprehension.png'),
-                    url('./assets/teacher/images/btn_comprehension_down.png'), 
-                    url('./assets/teacher/images/btn_comprehension.png'), 
-                    width('./assets/teacher/images/btn_comprehension.png'), 
-                    height('./assets/teacher/images/btn_comprehension.png'));
+                    url('../resorce/Comprehension_dis.png'),
+                    url('../resorce/Comprehension_dis.png'),
+                    url('../resorce/Comprehension_dis.png'),
+                    207px, 45px);
                 &.on {
-                    background-image: url('./assets/teacher/images/btn_comprehension_on.png');
-                }
-            }
-            .btn_visualizing {
-                @include btn_down_dis ( 
-                    url('./assets/teacher/images/btn_visualizing.png'), 
-                    url('./assets/teacher/images/btn_visualizing_down.png'), 
-                    url('./assets/teacher/images/btn_visualizing.png'), 
-                    width('./assets/teacher/images/btn_visualizing.png'), 
-                    height('./assets/teacher/images/btn_visualizing.png'));
-                &.on {
-                    min-width: 200px;
-                    min-height: 40px;
-                    @include btn_down_dis ( 
-                        url('./assets/teacher/images/btn_visualizing.png'), 
-                        url('./assets/teacher/images/btn_visualizing_down.png'), 
-                        url('./assets/teacher/images/btn_visualizing.png'), 
-                        400, //width('./assets/teacher/images/.png'), 
-                        100); // height('./assets/teacher/images/btn_visualizing.png'));
-                }
-            }
-            .btn_summarizing {
-                @include btn_down_dis ( 
-                    url('./assets/teacher/images/btn_summarizing.png'), 
-                    url('./assets/teacher/images/btn_summarizing_down.png'), 
-                    url('./assets/teacher/images/btn_summarizing.png'), 
-                    width('./assets/teacher/images/btn_summarizing.png'), 
-                    height('./assets/teacher/images/btn_summarizing.png'));
-                &.on {
-                    background-image: url('./assets/teacher/images/btn_summarizing_on.png');
+                    background-image: url('../resorce/Comprehension_on.png');
                 }
             }
         }
-        .btn_book {
+        .popup_box{
             position: absolute;
-            top: 79px;
-            right: 136px;
+            top: 58px;
+            right: 66px;
             z-index: 1;
-            @include btn_down_dis( 
-                url('./assets/teacher/images/btn_book.png'), 
-                url('./assets/teacher/images/btn_book_down.png'), 
-                url('./assets/teacher/images/btn_book_dis.png'), 
-                width('./assets/teacher/images/btn_book.png'), 
-                height('./assets/teacher/images/btn_book.png'));
-            &.up {
-                position: absolute;
-                top: 56.5px;
-                right: 136px;
+            .btn_strategy {
+                @include btn_down_dis( 
+                    url('../resorce/Strategy_default.png'), 
+                    url('../resorce/Strategy_down.png'), 
+                    url('../resorce/Strategy_dis.png'), 
+                    62px, 46px);
+            }
+            .btn_book {
+                @include btn_down_dis( 
+                    url('../resorce/Book_default.png'), 
+                    url('../resorce/Book_down.png'), 
+                    url('../resorce/Book_dis.png'), 
+                    62px,46px);
+            }
+        }        
+        .audio_box {
+            position: absolute;
+            top: 130px;
+            right: 80px;
+            z-index: 1;          
+            .btn_audio {
+                @include btn_down_dis( 
+                    url('../resorce/Audio_default.png'), 
+                    url('../resorce/Audio_down.png'), 
+                    url('../resorce/Audio_dis.png'), 
+                    48px,50px);
+            }
+            .btn_play {
+                margin-right: 14px;
+                @include btn_down_dis( 
+                    url('../resorce/Play_default.png'), 
+                    url('../resorce/Play_down.png'), 
+                    url('../resorce/Play_dis.png'), 
+                    48px,50px);
+            }
+            .btn_stop {
+                @include btn_down_dis( 
+                    url('../resorce/Stop_default.png'), 
+                    url('../resorce/Stop_down.png'), 
+                    url('../resorce/Stop_dis.png'), 
+                    48px,50px);
+            }
+            .btn_pause {
+                margin-right: 14px;
+                @include btn_down_dis( 
+                    url('../resorce/Pause_default.png'), 
+                    url('../resorce/Pause_down.png'), 
+                    url('../resorce/Pause_dis.png'), 
+                    48px,50px);
             }
         }
-        .btn_video {
-            position: absolute;
-            top: 80px;
-            right: 67px;
-            z-index: 1;
-            @include btn_down_dis( 
-                url('./assets/teacher/images/btn_video.png'), 
-                url('./assets/teacher/images/btn_video_down.png'), 
-                url('./assets/teacher/images/btn_video_dis.png'), 
-                width('./assets/teacher/images/btn_video.png'), 
-                height('./assets/teacher/images/btn_video.png'));
-            &.up {
-                position: absolute;
-                top: 58px;
-                right: 67px;
-            }
-        }
-        .btn_additional_quiz {
-            position: absolute;
-            top: 80px;
-            right: 205px;
-            z-index: 1;
-            @include btn_down_dis( 
-                url('./assets/teacher/images/btn_additional_quiz.png'), 
-                url('./assets/teacher/images/btn_additional_quiz.png'), 
-                url('./assets/teacher/images/btn_additional_quiz.png'), 
-                width('./assets/teacher/images/btn_additional_quiz.png'), 
-                height('./assets/teacher/images/btn_additional_quiz.png'));
-            &.up {
-                position: absolute;
-                top: 58px;
-                right: 67px;
-            }
-        }
+
+
         .btn_tab {
             position: absolute;
             top: 100px;
@@ -185,8 +173,8 @@
             }
             .pop_bg{
                 background-image:url('./assets/teacher/images/lets_talk_bg.png');
-                width:width('./assets/teacher/images/lets_talk_bg.png');
-                height:height('./assets/teacher/images/lets_talk_bg.png');
+                width:1136px;//width('./assets/teacher/images/lets_talk_bg.png');
+                height:671px;//height('./assets/teacher/images/lets_talk_bg.png');
                 margin:0 auto;
                 position:relative;
 
@@ -194,8 +182,8 @@
                     @include btn_on(
                         url('./assets/teacher/images/btn_answer.png'),
                         url('./assets/teacher/images/btn_answer_down.png'),
-                        width('./assets/teacher/images/btn_answer.png'),
-                        height('./assets/teacher/images/btn_answer.png'),
+                        61px,//width('./assets/teacher/images/btn_answer.png'),
+                        57px,//height('./assets/teacher/images/btn_answer.png'),
                     );
                     position:absolute;
                     right:20px;
@@ -288,23 +276,24 @@
             }
         }
         &.Compreshension {
-            background-image: url('./assets/teacher/images/bg_compre.png');
-            width: 100%;
-            height: height('./assets/teacher/images/bg_compre.png');
+            background-image: url('../resorce/bg.png');
+            background-repeat: no-repeat;
+            width: 1280px;//100%;
+            height: 800px;//height('./assets/teacher/images/bg_compre.png');
             @include Warmup;
             @include Passage;
             @include Question;
         }
         &.VISUALIZING {
             background-image: url('./assets/teacher/images/bg_visual.png');
-            width: 100%;
-            height: height('./assets/teacher/images/bg_visual.png');
+            width: 1280px;//100%;
+            height: 800px;//height('./assets/teacher/images/bg_visual.png');
             @include GraphicOrganizer;
         }
         &.SUMMARIZING {
             background-image: url('./assets/teacher/images/bg_visual.png');
-            width: 100%;
-            height: height('./assets/teacher/images/bg_visual.png');
+            width: 1280px;//100%;
+            height: 800px;//height('./assets/teacher/images/bg_visual.png');
             @include Summary;
         }
         .img_popup {
@@ -348,6 +337,8 @@
 
 @mixin mixin_page_box {
     .btn_page_box {
+        position: absolute;
+        top: 130px;
         width: 100%;
         height: 0px;
         overflow: visible;

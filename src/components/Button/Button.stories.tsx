@@ -12,7 +12,7 @@ import {ButtonGroup} from '../ButtonGroup/ButtonGroup';
 import Icon from '../Icon/Icon';
 
 export default {
-  title: 'Components/Button',
+  title: 'Tutorial/Button',
   component: Button,
   //decorators: [withKnobs]
 };

@@ -4,7 +4,7 @@ import Icon, { iconTypes } from './Icon';
 
 export default {
   component: Icon,
-  title: 'Components/Icon'
+  title: 'Tutorial/Icon'
 };
 
 export const icon = () => <Icon icon="heart" />;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface INItem {
+export type NItemProps = {
 	className?: string;
 	idx: number;
 	on: boolean;
@@ -8,7 +8,7 @@ export interface INItem {
 
 }
 
-export function NItem(props:INItem){
+export const NItem = (props:NItemProps) => {
 	const _click = () => {
 		props.onClick(props.idx);
 	}
@@ -21,6 +21,3 @@ export function NItem(props:INItem){
 		</span>
 	)
 }
-
-
-export default NItem;
