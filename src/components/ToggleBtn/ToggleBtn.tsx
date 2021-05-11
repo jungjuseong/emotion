@@ -96,7 +96,7 @@ export const ToggleBtn = (props:ToggleBtnProps) => {
 		style.display = 'none';
 	}
 
-	console.log("className:", local_class_name)
+	//console.log("className:", local_class_name)
 	return (
 		<button 
 			id={props.id} 

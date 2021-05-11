@@ -9,7 +9,7 @@ export default {
 
 const Template: Story<ToggleBtnProps> = (args) => 
   <div className="t_compre">
-    <div className="top" style={{backgroundColor: '#5a5ab9'}}>
+    <div className="top" style={{backgroundColor: '#5a6ea8'}}>
 		  <ToggleBtn {...args}/>
     </div>
   </div>

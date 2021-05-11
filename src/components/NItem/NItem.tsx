@@ -4,13 +4,13 @@ export type NItemProps = {
 	className?: string;
 	idx: number;
 	on: boolean;
-	onClick: (idx: number) => void;
+	onClick?: (idx: number) => void;
 
 }
 
 export const NItem = (props:NItemProps) => {
 	const _click = () => {
-		props.onClick(props.idx);
+		if(props.onClick) props.onClick(props.idx);
 	}
 	return(
 		<span 

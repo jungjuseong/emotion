@@ -94,74 +94,45 @@
                     48px,50px);
             }
         }
-
-
-        .btn_tab {
+        .bottom_box {
             position: absolute;
-            top: 100px;
-            left: 74px;
-            z-index: 1;
-            .btn_warmup {
-                margin-left: 11px;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;            
+            .btn_qna {
                 @include btn_down_dis(
-                    url('./assets/teacher/images/btn_warmup.png'), 
-                    url('./assets/teacher/images/btn_warmup_down.png'), 
-                    url('./assets/teacher/images/btn_warmup.png'), 
-                    width('./assets/teacher/images/btn_warmup.png'), 
-                    height('./assets/teacher/images/btn_warmup.png'));
+                    url('../resorce/Qna_default.png'), 
+                    url('../resorce/Qna_default.png'), 
+                    url('../resorce/Qna_dis.png'), 
+                    137px,52px);
                 &.on {
-                    background-image: url('./assets/teacher/images/btn_warmup_down.png');
+                    background-image: url('../resorce/Qna_on.png');
                 }
             }
-            .btn_passage {
-                margin-left: 11px;
+            .btn_readAlong {
                 @include btn_down_dis( 
-                    url('./assets/teacher/images/btn_passage.png'), 
-                    url('./assets/teacher/images/btn_passage_down.png'), 
-                    url('./assets/teacher/images/btn_passage.png'), 
-                    width('./assets/teacher/images/btn_passage.png'), 
-                    height('./assets/teacher/images/btn_passage.png'));
+                    url('../resorce/ReadAlong_default.png'), 
+                    url('../resorce/ReadAlong_default.png'), 
+                    url('../resorce/ReadAlong_dis.png'), 
+                    137px,52px);
                 &.on {
-                    background-image: url('./assets/teacher/images/btn_passage_down.png');
+                    background-image: url('../resorce/ReadAlong_on.png');
                 }
             }
-            .btn_question {
-                margin-left: 11px;
+            .btn_listen {
                 @include btn_down_dis( 
-                    url('./assets/teacher/images/btn_question.png'), 
-                    url('./assets/teacher/images/btn_question_down.png'), 
-                    url('./assets/teacher/images/btn_question.png'), 
-                    width('./assets/teacher/images/btn_question.png'), 
-                    height('./assets/teacher/images/btn_question.png'));
+                    url('../resorce/Listen_default.png'), 
+                    url('../resorce/Listen_default.png'), 
+                    url('../resorce/Listen_dis.png'), 
+                    137px,52px);
                 &.on {
-                    background-image: url('./assets/teacher/images/btn_question_down.png');
-                }
-            }
-            .btn_graphicorganizer {
-                margin-left: 11px;
-                @include btn_down_dis(
-                    url('./assets/teacher/images/btn_graphicorganizer.png'), 
-                    url('./assets/teacher/images/btn_graphicorganizer_down.png'), 
-                    url('./assets/teacher/images/btn_graphicorganizer.png'), 
-                    width('./assets/teacher/images/btn_graphicorganizer.png'), 
-                    height('./assets/teacher/images/btn_graphicorganizer.png'));
-                &.on {
-                    background-image: url('./assets/teacher/images/btn_graphicorganizer_down.png');
-                }
-            }
-            .btn_summary {
-                margin-left: 11px;
-                @include btn_down_dis(
-                    url('./assets/teacher/images/btn_summary.png'), 
-                    url('./assets/teacher/images/btn_summary_down.png'), 
-                    url('./assets/teacher/images/btn_summary.png'),
-                    width('./assets/teacher/images/btn_summary.png'), 
-                    height('./assets/teacher/images/btn_summary.png'));
-                &.on {
-                    background-image: url('./assets/teacher/images/btn_summary_down.png');
+                    background-image: url('../resorce/Listen_on.png');
                 }
             }
         }
+
+
         @include t_video_popup;
         @include t_storybook;
         .lets_talk{
