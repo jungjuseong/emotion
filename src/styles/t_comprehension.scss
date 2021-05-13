@@ -11,7 +11,7 @@
 @mixin t_comprehension {
     .t_compre {
         position: relative;
-        &>.top {
+        /*&>.top {
             position: absolute;
             top: 30px;
             left: 50%;
@@ -37,7 +37,7 @@
                     background-image: url('../resorce/Comprehension_on.png');
                 }
             }
-        }
+        }*/
         .popup_box{
             position: absolute;
             top: 58px;

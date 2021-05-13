@@ -1,10 +1,26 @@
 import React from 'react'
 import {BottomBox} from './BottomBox'
 
+import {ToggleBtnProps} from '../ToggleBtn/ToggleBtn'
+import { Story } from '@storybook/react';
+
 export default{
     title:'Components/BottomBox',
     component:BottomBox
-}
+};
+
+const Template: Story<ToggleBtnProps[]> = (args) =>
+    <div className='t_compre' style={{height:100,backgroundColor: '#5a6ea8'}}>
+        <BottomBox {...args} />
+    </div>
+
+export const test = Template.bind({});
+
+ test.args=[
+        {class_name:'btn_listen'},
+        {class_name:'btn_readAlong'},
+        {class_name:'btn_qna'},
+      ]
 
 export const Reading = () =>{
 

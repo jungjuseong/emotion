@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 import { Story } from '@storybook/react';
 
 import {ToggleBtn, ToggleBtnProps} from '../ToggleBtn/ToggleBtn';
-import {TopBtn} from '../TopBtn/TopBtn'
+import {TopBtn} from '../TopBtn/BtnGroup'
 import {PopupBox} from '../PopupBox/PopupBox'
 import {AudioBox} from '../AudioBox/AudioBox'
 import {PageBox} from '../PageBox/PageBox'
 import {BottomBox} from '../BottomBox/BottomBox'
+
+import {top} from '../../resorce/index'
 
 export default {
   title: 'Visang/Reading',
@@ -36,8 +38,14 @@ export const ReadingViewTest = () => {
  
   
   const topProps = [
-      {class_name:"btn_passage",on:title==='btn_passage',onClick:_onClick},
-      {class_name:"btn_comprehension",on:title==='btn_comprehension',onClick:_onClick}
+      {class_name:"btn_passage",on:title==='btn_passage',onClick:_onClick,
+      src:top.passage_default,
+      srcOn:top.passage_on,
+      width:'207px',height:'45px'},
+      {class_name:"btn_comprehension",on:title==='btn_comprehension',onClick:_onClick,
+      src:top.comprehension_default,
+      srcOn:top.comprehension_on,
+      width:'207px',height:'45px'},
   ]
   const popupProps = [
     {class_name:"btn_strategy"},
