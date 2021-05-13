@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 
 import { Story } from '@storybook/react';
+import {css} from '@emotion/react';
 
 import {ToggleBtn, ToggleBtnProps} from '../ToggleBtn/ToggleBtn';
-import {TopBtn} from '../TopBtn/BtnGroup'
-import {PopupBox} from '../PopupBox/PopupBox'
-import {AudioBox} from '../AudioBox/AudioBox'
+import {BtnGroup} from '../BtnGroup/BtnGroup'
 import {PageBox} from '../PageBox/PageBox'
-import {BottomBox} from '../BottomBox/BottomBox'
 
-import {top} from '../../resorce/index'
+import {imgTop,imgPopup,imgAudio,imgBottom} from '../../resorce/index'
 
 export default {
   title: 'Visang/Reading',
@@ -37,44 +35,152 @@ export const ReadingViewTest = () => {
   const _bottomClick3 = () => {setBottom3(!onBottom3)}
  
   
-  const topProps = [
-      {class_name:"btn_passage",on:title==='btn_passage',onClick:_onClick,
-      src:top.passage_default,
-      srcOn:top.passage_on,
-      width:'207px',height:'45px'},
-      {class_name:"btn_comprehension",on:title==='btn_comprehension',onClick:_onClick,
-      src:top.comprehension_default,
-      srcOn:top.comprehension_on,
-      width:'207px',height:'45px'},
-  ]
-  const popupProps = [
-    {class_name:"btn_strategy"},
-    {class_name:"btn_book"}
-  ]
-  const audioProps = [
-    {class_name:'btn_audio',view:!audio,onClick:_onAudio},
-    {class_name:'btn_play',view:!play&&audio,onClick:_onPlay},
-    {class_name:'btn_pause',view:play&&audio,onClick:_onPlay},
-    {class_name:'btn_stop',view:audio,onClick:_onAudio},
-  ]
+  const topProps = {
+    btnProps:[{
+      class_name:'btn_passage',
+      src:imgTop.passage_default,
+      srcOn:imgTop.passage_on,
+      width:imgTop.width,
+      height:imgTop.height,
+      on:title==='btn_passage',
+      onClick:_onClick,
+      style:css`
+        &.on{
+          pointer-events:none
+        }  
+      `
+    },{
+      class_name:'btn_compreshension',
+      src:imgTop.comprehension_default,
+      srcOn:imgTop.comprehension_on,
+      width:imgTop.width,
+      height:imgTop.height,
+      on:title==='btn_compreshension',
+      onClick:_onClick,
+      style:css`
+        &.on{
+          pointer-events:none
+        } 
+      `
+    }],
+    style:css`
+      position:absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      background-color:#5a6ea8;
+    `
+}
+  const popupProps = {
+    btnProps:[{
+        src:imgPopup.strategy_default,
+        srcDis:imgPopup.strategy_dis,
+        srcDown:imgPopup.strategy_down,
+        width:imgPopup.width,
+        height:imgPopup.height,
+    },{
+        src:imgPopup.book_default,
+        srcDis:imgPopup.book_dis,
+        srcDown:imgPopup.book_down,
+        width:imgPopup.width,
+        height:imgPopup.height,
+    }],
+    style:css`
+            position:absolute;
+            top: 58px;
+            right: 66px;
+            z-index: 1;
+        `
+}
+  const audioProps = {
+    btnProps:[{
+        src:imgAudio.audio_default,
+        srcDown:imgAudio.audio_down,
+        srcDis:imgAudio.audio_dis,
+        width:imgAudio.width,
+        height:imgAudio.height,
+        view:!audio,
+        onClick:_onAudio,
+    },{
+        src:imgAudio.play_default,
+        srcDown:imgAudio.play_down,
+        srcDis:imgAudio.play_dis,
+        width:imgAudio.width,
+        height:imgAudio.height,
+        view:!play&&audio,
+        onClick:_onPlay,
+    },{
+        src:imgAudio.pause_default,
+        srcDown:imgAudio.pause_down,
+        srcDis:imgAudio.pause_dis,
+        width:imgAudio.width,
+        height:imgAudio.height,
+        view:play&&audio,
+        onClick:_onPlay,
+    },{
+        src:imgAudio.stop_default,
+        srcDown:imgAudio.stop_down,
+        srcDis:imgAudio.stop_dis,
+        width:imgAudio.width,
+        height:imgAudio.height,
+        view:audio,
+        onClick:_onAudio
+      },],
+    style:css`
+            position: absolute;
+            top: 130px;
+            right: 80px;
+            z-index: 1;  
+        `
+}
   const pageProps = [
     {idx:0,on:onNum===0,onClick:_pageClick},
     {idx:1,on:onNum===1,onClick:_pageClick},
     {idx:2,on:onNum===2,onClick:_pageClick},
   ]
-  const bottomProps = [
-    {class_name:'btn_listen', on:onBottom1, onClick:_bottomClick1},
-    {class_name:'btn_readAlong', on:onBottom2, onClick:_bottomClick2},
-    {class_name:'btn_qna', on:onBottom3, onClick:_bottomClick3},
-  ]
+  const bottomProps = {
+    btnProps:[{
+        src:imgBottom.listen_default,
+        srcDis:imgBottom.listen_dis,
+        srcOn:imgBottom.listen_on,
+        width:imgBottom.width,
+        height:imgBottom.height,
+        on:onBottom1,
+        onClick:_bottomClick1,
+    },{
+        src:imgBottom.readAlong_default,
+        srcDis:imgBottom.readAlong_dis,
+        srcOn:imgBottom.readAlong_on,
+        width:imgBottom.width,
+        height:imgBottom.height,
+        on:onBottom2,
+        onClick:_bottomClick2
+    },{
+        src:imgBottom.qna_default,
+        srcDis:imgBottom.qna_dis,
+        srcOn:imgBottom.qna_on,
+        width:imgBottom.width,
+        height:imgBottom.height,
+        on:onBottom3,
+        onClick:_bottomClick3
+    }],
+    style:css`
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    `
+}
 
   return(
     <div className={"t_compre Compreshension"} >
-      <TopBtn {...topProps} />
-      <PopupBox {...popupProps} />
-      <AudioBox {...audioProps} />
+      <BtnGroup {...topProps} />
+      <BtnGroup {...popupProps} />
+      <BtnGroup {...audioProps} />
       <PageBox {...pageProps} />
-      <BottomBox {...bottomProps} />
+      <BtnGroup {...bottomProps} />
     </div>
   )
 }

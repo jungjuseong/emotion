@@ -13,14 +13,69 @@ import strategy_down from './Strategy_down.png'
 import audio_default from './Audio_default.png'
 import audio_dis from './Audio_dis.png'
 import audio_down from './Audio_down.png'
+import play_default from './Play_default.png'
+import play_dis from './Play_dis.png'
+import play_down from './Play_down.png'
+import stop_default from './Stop_default.png'
+import stop_dis from './Stop_dis.png'
+import stop_down from './Stop_down.png'
+import pause_default from './Pause_default.png'
+import pause_dis from './Pause_dis.png'
+import pause_down from './Pause_down.png'
 
-import answer_default from './Answer_default.png'
-import answer_dis from './Answer_dis.png'
-import answer_down from './Answer_down.png'
+import listen_default from './Listen_default.png'
+import listen_dis from './Listen_dis.png'
+import listen_on from './Listen_on.png'
+import readAlong_default from './ReadAlong_default.png'
+import readAlong_dis from './ReadAlong_dis.png'
+import readAlong_on from './ReadAlong_on.png'
+import qna_default from './Qna_default.png'
+import qna_dis from './Qna_dis.png'
+import qna_on from './Qna_on.png'
+
 
 let width
 let height
 
-export const top = {passage_default,passage_on,comprehension_default,comprehension_on,width:'194px',height:'37px'};
-export const popup = {book_default,book_dis,book_down,strategy_default,strategy_dis,strategy_down}
-export const audio = {audio_default,audio_dis,audio_down};
+export const imgTop = {
+    passage_default,
+    passage_on,
+    comprehension_default,
+    comprehension_on,
+    width:'194px',height:'37px'
+};
+export const imgPopup = {
+    book_default,
+    book_dis,book_down,
+    strategy_default,
+    strategy_dis,
+    strategy_down,
+    width:'62px',height:'46px'
+}
+export const imgAudio = {
+    audio_default,
+    audio_dis,
+    audio_down,
+    play_default,
+    play_dis,
+    play_down,
+    stop_default,
+    stop_dis,
+    stop_down,
+    pause_default,
+    pause_dis,
+    pause_down,
+    width:'48px',height:'50px'
+};
+export const imgBottom = {
+    listen_default,
+    listen_dis,
+    listen_on,
+    readAlong_default,
+    readAlong_dis,
+    readAlong_on,
+    qna_default,
+    qna_dis,
+    qna_on,
+    width:'137px',height:'52px'
+}

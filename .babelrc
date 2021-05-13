@@ -11,5 +11,10 @@
       ],
       "@babel/preset-typescript"
     ],
-    "plugins": ["@emotion"]
+    "plugins": [[
+      "@emotion",
+      {
+        "autoLabel": "never" // 기본값 'dev-only'
+      }
+    ]]
   }

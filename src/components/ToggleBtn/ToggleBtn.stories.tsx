@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import {ToggleBtn, ToggleBtnProps} from './ToggleBtn';
-import {top,audio,popup} from '../../resorce/index';
+import {imgTop,imgAudio,imgPopup} from '../../resorce/index';
 
 export default {
   title: 'Components/ToggleBtn',
@@ -18,16 +18,16 @@ const Template: Story<ToggleBtnProps> = (args) =>
 export const PassageButton = Template.bind({});
 PassageButton.args = {
   class_name: "btn_passage",
-  src:top.passage_default,
-  srcOn:top.passage_on,
+  src:imgTop.passage_default,
+  srcOn:imgTop.passage_on,
   width:'194px',
   height:'37px',
 };
 
 export const CompreshensionButton = Template.bind({});
 CompreshensionButton.args = {
-  src:top.comprehension_default,
-  srcOn:top.comprehension_on,
+  src:imgTop.comprehension_default,
+  srcOn:imgTop.comprehension_on,
   width:'194px',
   height:'37px'
 };
@@ -35,16 +35,16 @@ CompreshensionButton.args = {
 export const popupBtn = () =>
   <div>
     <ToggleBtn 
-      src={popup.strategy_default}
-      srcDis={popup.strategy_dis}
-      srcDown={popup.strategy_down}
+      src={imgPopup.strategy_default}
+      srcDis={imgPopup.strategy_dis}
+      srcDown={imgPopup.strategy_down}
       width='62px'
       height='46px'
     />
     <ToggleBtn 
-      src={popup.book_default}
-      srcDis={popup.book_dis}
-      srcDown={popup.book_down}
+      src={imgPopup.book_default}
+      srcDis={imgPopup.book_dis}
+      srcDown={imgPopup.book_down}
       width='62px'
       height='46px'
     />
@@ -53,9 +53,9 @@ export const popupBtn = () =>
 
 export const audioBtn = () => 
   <ToggleBtn class_name={'btn_audio'}
-    src={audio.audio_default}
-    srcDis={audio.audio_dis}
-    srcDown={audio.audio_down}
+    src={imgAudio.audio_default}
+    srcDis={imgAudio.audio_dis}
+    srcDown={imgAudio.audio_down}
     width='48px'
     height='50px'
   />

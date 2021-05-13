@@ -16,7 +16,7 @@ export type ToggleBtnProps = {
 	onClick?: (evt: React.MouseEvent<HTMLElement>) => void;
 	
 	preventEvent?: boolean;
-	style?: React.CSSProperties;
+	style?: any;
 
 	/*useMap?: string;
 	onMouseDown?: (evt: Event) => void;
@@ -129,7 +129,7 @@ export const ToggleBtn = (props:ToggleBtnProps) => {
 		cursor: pointer;	
 		&.on{
 			background-image: url(${props.srcOn});
-			pointer-events: none;
+			//pointer-events: none;
 			cursor: auto;
 		}
 		&:active{
@@ -152,6 +152,8 @@ export const ToggleBtn = (props:ToggleBtnProps) => {
 	`
 
 	//console.log("className:", local_class_name)
+	//console.log(btnStyle)
+	//console.log(props.style)
 	return (
 		<button 
 			id={props.id} 
@@ -162,7 +164,7 @@ export const ToggleBtn = (props:ToggleBtnProps) => {
 			draggable={false}
 			//onTransitionEnd={props.onTransitionEnd}
 			style={style}
-			css={btnStyle}
+			css={[btnStyle,style]}
 		/>
 	);
 }
