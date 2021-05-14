@@ -111,10 +111,10 @@ export const ToggleBtn = (props:ToggleBtnProps) => {
 	
 	const local_class_name = arr.join(' ');
 	let style = props.style;
-	if(props.view === false) {
+	/*if(props.view === false) {
 		if(!style) style = {};
 		style.display = 'none';
-	}
+	}*/
 
 	const btnStyle = css`
 		touch-action: none;
@@ -126,7 +126,8 @@ export const ToggleBtn = (props:ToggleBtnProps) => {
 		background-repeat: no-repeat;
 		width: ${props.width};
 		height: ${props.height};
-		cursor: pointer;	
+		cursor: pointer;
+		display:${props.view===false? 'none': 'inline'};	
 		&.on{
 			background-image: url(${props.srcOn});
 			//pointer-events: none;

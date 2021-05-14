@@ -7,7 +7,7 @@ import {ToggleBtn, ToggleBtnProps} from '../ToggleBtn/ToggleBtn';
 import {BtnGroup} from '../BtnGroup/BtnGroup'
 import {PageBox} from '../PageBox/PageBox'
 
-import {imgTop,imgPopup,imgAudio,imgBottom} from '../../resorce/index'
+import {imgTop,imgPopup,imgAudio,imgBottom,bg} from '../../resorce/index'
 
 export default {
   title: 'Visang/Reading',
@@ -69,7 +69,6 @@ export const ReadingViewTest = () => {
       left: 50%;
       transform: translateX(-50%);
       z-index: 1;
-      background-color:#5a6ea8;
     `
 }
   const popupProps = {
@@ -110,6 +109,9 @@ export const ReadingViewTest = () => {
         height:imgAudio.height,
         view:!play&&audio,
         onClick:_onPlay,
+        style:css`
+          margin-right:14px;
+        `
     },{
         src:imgAudio.pause_default,
         srcDown:imgAudio.pause_down,
@@ -118,6 +120,9 @@ export const ReadingViewTest = () => {
         height:imgAudio.height,
         view:play&&audio,
         onClick:_onPlay,
+        style:css`
+          margin-right:14px;
+        `
     },{
         src:imgAudio.stop_default,
         srcDown:imgAudio.stop_down,
@@ -175,7 +180,13 @@ export const ReadingViewTest = () => {
 }
 
   return(
-    <div className={"t_compre Compreshension"} >
+    <div css={css`
+      position: relative;
+      background-image: url(${bg.comprehension_bg});
+      background-repeat: no-repeat;
+      width: 1280px;
+      height: 800px;
+    `} >
       <BtnGroup {...topProps} />
       <BtnGroup {...popupProps} />
       <BtnGroup {...audioProps} />

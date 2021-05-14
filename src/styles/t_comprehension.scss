@@ -94,7 +94,7 @@
                     48px,50px);
             }
         }*/
-        .bottom_box {
+        /*.bottom_box {
             position: absolute;
             bottom: 1px;
             left: 50%;
@@ -130,7 +130,7 @@
                     background-image: url('../resorce/Listen_on.png');
                 }
             }
-        }
+        }*/
 
 
         @include t_video_popup;
@@ -247,7 +247,7 @@
             }
         }
         &.Compreshension {
-            background-image: url('../resorce/bg.png');
+            background-image: url('../resorce/Comprehension_bg.png');
             background-repeat: no-repeat;
             width: 1280px;//100%;
             height: 800px;//height('./assets/teacher/images/bg_compre.png');

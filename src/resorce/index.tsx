@@ -33,6 +33,8 @@ import qna_default from './Qna_default.png'
 import qna_dis from './Qna_dis.png'
 import qna_on from './Qna_on.png'
 
+import comprehension_bg from './Comprehension_bg.png'
+
 
 let width
 let height
@@ -78,4 +80,5 @@ export const imgBottom = {
     qna_dis,
     qna_on,
     width:'137px',height:'52px'
-}
+};
+export const bg = {comprehension_bg,width:'1280px',height:'800px'}
