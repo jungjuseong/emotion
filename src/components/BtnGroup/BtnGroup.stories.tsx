@@ -19,22 +19,31 @@ const Template: Story<BtnGroupProps> = (args) =>{
 export const Default = Template.bind({});
 Default.args={
     btnProps:[{
-    src:imgTop.passage_default,
-    srcOn:imgTop.passage_on,
-    width:imgTop.width,
-    height:imgTop.height,
-},{
-    src:imgTop.comprehension_default,
-    srcOn:imgTop.comprehension_on,
-    width:imgTop.width,
-    height:imgTop.height,
-}],
+        src:imgTop.passage_default,
+        srcOn:imgTop.passage_on,
+        width:imgTop.width,
+        height:imgTop.height,
+    },{
+        src:imgBottom.listen_default,
+        srcDis:imgBottom.listen_dis,
+        srcOn:imgBottom.listen_on,
+        width:imgBottom.width,
+        height:imgBottom.height,
+    },{
+        src:imgPopup.strategy_default,
+        srcDis:imgPopup.strategy_dis,
+        srcDown:imgPopup.strategy_down,
+        width:imgPopup.width,
+        height:imgPopup.height,
+    },{
+        src:imgAudio.audio_default,
+        srcDown:imgAudio.audio_down,
+        srcDis:imgAudio.audio_dis,
+        width:imgAudio.width,
+        height:imgAudio.height,
+    }],
     style:css`
         position:absolute;
-        top:30px;
-        left:50%;
-        transform:translateX(-50%);
-        z-index:1;  
         background-color:#5a6ea8;
     `
 }
@@ -46,36 +55,32 @@ export const TopBox = () => {
     
     const TopProps = {
         btnProps:[{
-        src:imgTop.passage_default,
-        srcOn:imgTop.passage_on,
-        width:imgTop.width,
-        height:imgTop.height,
-        on:title==='Passage',
-        onClick:_onClick1,
-        style:css`
-            &.on{
-                pointer-events:none;
-            }
-        `
-    },{
-        src:imgTop.comprehension_default,
-        srcOn:imgTop.comprehension_on,
-        width:imgTop.width,
-        height:imgTop.height,
-        on:title==='Compreshension',
-        onClick:_onClick2,
-        style:css`
-            &.on{
-                pointer-events:none;
-            }  
-        `
-    }],
+            src:imgTop.passage_default,
+            srcOn:imgTop.passage_on,
+            width:imgTop.width,
+            height:imgTop.height,
+            on:title==='Passage',
+            onClick:_onClick1,
+            style:css`
+                &.on{
+                    pointer-events:none;
+                }
+            `
+        },{
+            src:imgTop.comprehension_default,
+            srcOn:imgTop.comprehension_on,
+            width:imgTop.width,
+            height:imgTop.height,
+            on:title==='Compreshension',
+            onClick:_onClick2,
+            style:css`
+                &.on{
+                    pointer-events:none;
+                }  
+            `
+        }],
         style:css`
             position:absolute;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
             background-color:#5a6ea8;
         `
     }
@@ -101,9 +106,6 @@ export const PopupBox = () => {
         }],
         style:css`
             position:absolute;
-            top: 58px;
-            right: 66px;
-            z-index: 1;
         `
     }
     return(
@@ -154,9 +156,7 @@ export const AudioBox = () => {
         ],
         style:css`
             position: absolute;
-            top: 130px;
-            right: 80px;
-            z-index: 1;  
+            right: 90%;
         `
     }
 
@@ -202,10 +202,6 @@ export const BottomBox = () => {
         }],
         style:css`
             position: absolute;
-            bottom: 1px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
             background-color:#5a6ea8;
         `
     }
